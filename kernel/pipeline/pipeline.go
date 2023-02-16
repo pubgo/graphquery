@@ -15,15 +15,16 @@
 package pipeline
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/storyicon/graphquery/kernel/selector"
 )
 
-const (
+var (
 	// InvokePlaceholder is used for its own replacement.
 	// When InvokePlaceholder appears in args, it will be replaced by the string of its own node.
-	InvokePlaceholder = string(26) + "{$}" + string(26)
+	InvokePlaceholder = fmt.Sprintf("%s{$}%s", []byte{26}, []byte{26})
 )
 
 // Pipeline structure is the calling unit in pipeline.
